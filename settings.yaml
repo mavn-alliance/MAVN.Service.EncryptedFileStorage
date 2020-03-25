@@ -1,0 +1,29 @@
+EncryptedFileStorageService:
+    Db:
+        LogsConnString:
+            settings-key: EncryptedFileStorageService-LogsConnString
+            types:
+              - AzureTableStorage
+        DataConnString:
+            settings-key: EncryptedFileStorageService-DataConnString
+        FilesContentConnString:
+            settings-key: EncryptedFileStorageService-FilesContentConnString
+            types:
+              - AzureTableStorage
+    KeyVault:
+        KeyVaultConnectionString:
+            settings-key: EncryptedFileStorageService-KeyVaultConnectionString
+        FileStorageKey:
+            settings-key: EncryptedFileStorageService-FileStorageKey
+SlackNotifications:
+    AzureQueue:
+        ConnectionString:
+            settings-key: SlackNotificationsConnString
+            types:
+                - AzureTableStorage
+        QueueName:
+            settings-key: SlackQueueName
+MonitoringServiceClient:
+    MonitoringServiceUrl:
+        settings-key: MonitoringServiceUrl
+

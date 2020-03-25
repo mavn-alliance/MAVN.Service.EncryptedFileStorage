@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+    <PackageReference Include="Moq" Version="4.13.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\client\Lykke.Service.EncryptedFileStorage.Client\Lykke.Service.EncryptedFileStorage.Client.csproj" />
+    <ProjectReference Include="..\..\src\Lykke.Service.EncryptedFileStorage\Lykke.Service.EncryptedFileStorage.csproj" />
+    <ProjectReference Include="..\..\src\Lykke.Service.EncryptedFileStorage.DomainServices\Lykke.Service.EncryptedFileStorage.DomainServices.csproj" />
+  </ItemGroup>
+</Project>
