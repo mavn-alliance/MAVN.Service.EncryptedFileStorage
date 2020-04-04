@@ -22,7 +22,7 @@ namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Lykke.Service.EncryptedFileStorage.Domain.Models.EncryptedFile", b =>
+            modelBuilder.Entity("MAVN.Service.EncryptedFileStorage.Domain.Models.EncryptedFile", b =>
                 {
                     b.Property<Guid>("FileId")
                         .ValueGeneratedOnAdd()
