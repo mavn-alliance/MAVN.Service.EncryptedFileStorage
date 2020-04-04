@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
+    <PackageReference Include="Lykke.Common" Version="7.4.0" />
+    <PackageReference Include="Lykke.Sdk" Version="5.14.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\client\MAVN.Service.EncryptedFileStorage.Client\MAVN.Service.EncryptedFileStorage.Client.csproj" />
+    <ProjectReference Include="..\MAVN.Service.EncryptedFileStorage.AzureRepositories\MAVN.Service.EncryptedFileStorage.AzureRepositories.csproj" />
+    <ProjectReference Include="..\MAVN.Service.EncryptedFileStorage.Domain\MAVN.Service.EncryptedFileStorage.Domain.csproj" />
+    <ProjectReference Include="..\MAVN.Service.EncryptedFileStorage.DomainServices\MAVN.Service.EncryptedFileStorage.DomainServices.csproj" />
+    <ProjectReference Include="..\MAVN.Service.EncryptedFileStorage.MsSqlRepositories\MAVN.Service.EncryptedFileStorage.MsSqlRepositories.csproj" />
+  </ItemGroup>
+</Project>
