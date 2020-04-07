@@ -1,4 +1,4 @@
-using Autofac;
+﻿using Autofac;
 using JetBrains.Annotations;
 using Lykke.HttpClientGenerator;
 using Lykke.HttpClientGenerator.Infrastructure;
@@ -30,7 +30,7 @@ namespace MAVN.Service.EncryptedFileStorage.Client
             if (string.IsNullOrWhiteSpace(settings.ServiceUrl))
                 throw new ArgumentException("Value cannot be null or whitespace.", nameof(EncryptedFileStorageServiceClientSettings.ServiceUrl));
 
-            var clientBuilder = HttpClientGenerator.HttpClientGenerator.BuildForUrl(settings.ServiceUrl)
+            var clientBuilder = HttpClientGenerator.BuildForUrl(settings.ServiceUrl)
                 .WithAdditionalCallsWrapper(new ExceptionHandlerCallsWrapper());
 
             var apiKey = Environment.GetEnvironmentVariable("EfsApiKey");

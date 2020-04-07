@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.IO;
@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.Storage.Blob;
 
-[assembly: InternalsVisibleTo("Lykke.Service.EncryptedFileStorage.Tests")]
+[assembly: InternalsVisibleTo("MAVN.Service.EncryptedFileStorage.Tests")]
 
 namespace MAVN.Service.EncryptedFileStorage.DomainServices
 {
