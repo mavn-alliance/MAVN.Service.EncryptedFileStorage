@@ -1,6 +1,6 @@
 using System.Data.Common;
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.EncryptedFileStorage.Domain.Models;
 using MAVN.Service.EncryptedFileStorage.MsSqlRepositories.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
