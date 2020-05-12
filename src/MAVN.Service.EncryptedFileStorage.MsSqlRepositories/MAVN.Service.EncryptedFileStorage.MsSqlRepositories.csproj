@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Lykke.Common.MsSql" Version="2.0.1" />
+    <ProjectReference Include="..\MAVN.Service.EncryptedFileStorage.Domain\MAVN.Service.EncryptedFileStorage.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MAVN.Service.EncryptedFileStorage.Domain\MAVN.Service.EncryptedFileStorage.Domain.csproj" />
+    <PackageReference Include="MAVN.Common.MsSql" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

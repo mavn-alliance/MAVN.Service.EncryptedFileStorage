@@ -3,7 +3,7 @@ using Autofac;
 using AzureStorage;
 using AzureStorage.Blob;
 using JetBrains.Annotations;
-using Lykke.Common.MsSql;
+using MAVN.Common.MsSql;
 using MAVN.Service.EncryptedFileStorage.Auth;
 using MAVN.Service.EncryptedFileStorage.AzureRepositories;
 using MAVN.Service.EncryptedFileStorage.Client;
