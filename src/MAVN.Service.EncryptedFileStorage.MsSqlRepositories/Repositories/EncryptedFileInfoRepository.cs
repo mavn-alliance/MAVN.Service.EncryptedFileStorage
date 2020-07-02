@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.EncryptedFileStorage.Domain.Models;
 using MAVN.Service.EncryptedFileStorage.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -11,9 +11,9 @@ namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories.Repositories
 {
     public class EncryptedFileInfoRepository : IEncryptedFileInfoRepository
     {
-        private readonly MsSqlContextFactory<DatabaseContext> _contextFactory;
+        private readonly PostgreSQLContextFactory<DatabaseContext> _contextFactory;
 
-        public EncryptedFileInfoRepository(MsSqlContextFactory<DatabaseContext> contextFactory)
+        public EncryptedFileInfoRepository(PostgreSQLContextFactory<DatabaseContext> contextFactory)
         {
             _contextFactory = contextFactory;
         }

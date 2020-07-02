@@ -1,13 +1,13 @@
-using System.Data.Common;
+﻿using System.Data.Common;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using MAVN.Service.EncryptedFileStorage.Domain.Models;
 using MAVN.Service.EncryptedFileStorage.MsSqlRepositories.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories
 {
-    public class DatabaseContext : MsSqlContext
+    public class DatabaseContext : PostgreSQLContext
     {
         private const string Schema = "encrypted_files_storage";
 
@@ -42,7 +42,7 @@ namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories
         {
         }
 
-        protected override void OnLykkeModelCreating(ModelBuilder modelBuilder)
+        protected override void OnMAVNModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new EncryptedFileConfiguration());
         }

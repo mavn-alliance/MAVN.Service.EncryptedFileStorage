@@ -1,4 +1,4 @@
-using MAVN.Service.EncryptedFileStorage.Domain.Models;
+﻿using MAVN.Service.EncryptedFileStorage.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,7 +12,7 @@ namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories.EntityConfiguratio
 
             builder.HasKey(x => x.FileId);
 
-            builder.Property(x => x.FileId).ValueGeneratedOnAdd().HasDefaultValueSql("newid()");
+            builder.Property(x => x.FileId).ValueGeneratedOnAdd();
             builder.Property(x => x.Origin).IsRequired().HasMaxLength(63);
             builder.Property(x => x.FileName).IsRequired().HasMaxLength(255);
             builder.Property(x => x.BlobName).HasMaxLength(1024);
