@@ -1,9 +1,8 @@
-using System;
+﻿using System;
 using Autofac;
 using AzureStorage;
 using AzureStorage.Blob;
 using JetBrains.Annotations;
-using MAVN.Common.MsSql;
 using MAVN.Service.EncryptedFileStorage.Auth;
 using MAVN.Service.EncryptedFileStorage.AzureRepositories;
 using MAVN.Service.EncryptedFileStorage.Client;
@@ -15,6 +14,7 @@ using MAVN.Service.EncryptedFileStorage.MsSqlRepositories.Repositories;
 using MAVN.Service.EncryptedFileStorage.Services;
 using MAVN.Service.EncryptedFileStorage.Settings;
 using Lykke.SettingsReader;
+using MAVN.Persistence.PostgreSQL.Legacy;
 using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Azure.Storage;
@@ -79,7 +79,7 @@ namespace MAVN.Service.EncryptedFileStorage.Modules
                 .SingleInstance();
 
             //Repositories
-            builder.RegisterMsSql(
+            builder.RegisterPostgreSQL(
                 _appSettings.CurrentValue.EncryptedFileStorageService.Db.DataConnString,
                 connString => new DatabaseContext(connString, false),
                 dbConn => new DatabaseContext(dbConn));

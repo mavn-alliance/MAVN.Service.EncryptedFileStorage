@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories.Migrations
 {
-    public partial class AddEncryptedFileEntity : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,12 +15,13 @@ namespace MAVN.Service.EncryptedFileStorage.MsSqlRepositories.Migrations
                 schema: "encrypted_files_storage",
                 columns: table => new
                 {
-                    FileId = table.Column<Guid>(nullable: false, defaultValueSql: "newid()"),
-                    Origin = table.Column<string>(maxLength: 200, nullable: false),
+                    FileId = table.Column<Guid>(nullable: false),
+                    Origin = table.Column<string>(maxLength: 63, nullable: false),
                     FileName = table.Column<string>(maxLength: 255, nullable: false),
-                    BlobName = table.Column<string>(maxLength: 255, nullable: false),
-                    Length = table.Column<long>(nullable: false),
-                    FileDate = table.Column<DateTime>(nullable: false)
+                    BlobName = table.Column<string>(maxLength: 1024, nullable: true),
+                    Length = table.Column<long>(nullable: true),
+                    FileDate = table.Column<DateTime>(nullable: true),
+                    IsUploadCompleted = table.Column<bool>(nullable: false, defaultValue: false)
                 },
                 constraints: table =>
                 {
